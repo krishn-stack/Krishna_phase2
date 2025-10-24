@@ -28,7 +28,7 @@ picoCTF{00000d2a}
 ## My Approach:
 After seeing the videos from the given resources in which a challenge ```ARMssembly 0``` challenge was solved and he explained about things how to know about things written in that challenge file. I applied that in the above challenge and found that when function ```func``` gets an argument as ```0```, result will be printed as ```win```.
 I also checked given Hint too which says shift. I started to look over the file, I came up with an expression ```(79<<7)/3``` and this has to be the argument.
-On solving it, ```(79*(2(sup)7(sup)))/3 = 3370```. So after converting it to hex code using python terminal, ```hex(3370)```, I got hex code as ```0xd2a``` so as the challenge says no 0x and 32bits therefore, I put 5 zeros before d2a and by this I got the flag for the challenge.
+On solving it, ```(79*(2```(sup)```7```(sup)```/3 = 3370```. So after converting it to hex code using python terminal, ```hex(3370)```, I got hex code as ```0xd2a``` so as the challenge says no 0x and 32bits therefore, I put 5 zeros before d2a and by this I got the flag for the challenge.
 
 ## New Learnings:
 Through this challenge, I get to know about how to know some things about assembly language and how to interpret what function in it is doing.
