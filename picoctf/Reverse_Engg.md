@@ -37,3 +37,30 @@ Through this challenge, I get to know about how to know some things about assemb
 I would not say them as wrong directions but yeah I didn't get this expression on my first attempt, I tried deriving expression 5 times and at 6th time I got it.
 
 
+# Challenge 3: Vault-door-3
+In this challenge, you have been given a java source code file in which it's checking whether the entered password is correct or not.
+
+## Flag:
+```
+picoCTF{jU5t_a_s1mpl3_an4gr4m_4_u_79958f}
+```
+
+## My Approach:
+First I opened the given java source code file on ```BlueJ``` the checked the code what it is performing. After that I looked for the input that the code is taking which was the buffer char array and storing it in a string s and returning if string s is equal to the string ```jU5t_a_sna_3lpm18g947_u_4_m9r54f```. So I dry run all the for loops in the code for loop variables and filled the buffer char array as indexed and at last I came up with a complete buffer char array of 32 characters which was the flag for the above challenge.
+
+## New Learnings:
+Understanding of the java source code and dry running it to get the flag.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
