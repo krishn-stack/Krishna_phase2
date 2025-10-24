@@ -1,4 +1,4 @@
-## Challenge 1: GDB Baby 1
+# Challenge 1: GDB Baby 1
 
 In this challenge, you have to use a disassembler tool (in my case, I used IDAFree-9.2) to disassemble a debugger0_a file given in the challennge.
 
@@ -16,7 +16,7 @@ Through this challenge, I learnt how to use a disassembler and and how to debugg
 At start, I was opeing everything in the eax register and trying to use them as flag. When nothing worked, my focus went to the code written beside ```eax``` register and I noticedd their is a h letter mentioned after that. So I got to know that it's a hex code and then I converted it and got the answer. Inshort, I didn't noticed that h after that code.
 
 
-## Chalenge 2: ARMssembly 1
+# Chalenge 2: ARMssembly 1
 
 In this challenge, there's a file given named ```chall_1.S``` in which you have to check for which argument code will print ```win``` as output.
 
