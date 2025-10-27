@@ -71,6 +71,22 @@ Got to learn what SSTI is and about it's injection codes and Jinja 2 template fo
 3. OWASP
 
 
+# Challenge 3: Cookies
+In this challenge, a website is given in which it's asked to find out the best cookie to get the flag.
+
+## Flag:
+```
+picoCTF{3v3ry1_l0v3s_c00k135_96cdadfd}
+```
+
+## My Approach:
+As the webpage opened, it says ```Welcome to my cookie search page. See how much I like different kinds of cookies!``` and in the text box ```snickerdoodle```. I first opened the ```Developer's Tools``` in which I went to cookies secttion, in which it has only one cookie named ```name``` whose value was initialised to ```-1```. As the text box says, ```snickerdoodle```, I  first entered snickerdoodle in the text box. It says, ```I love snickerdoodle cookies!``` and a comment says, ```That is a cookie! Not very special though...```. In addition, value initialised to name changed to ```0```. Then I, one by one started updating the cookie value, first to 1, then 2, then 3 and so on and in each updation I got some names of cookies like I love this and that. At last, on the cookie value 18, I got the flag.
+
+## My Learnings:
+Got to know how to manipulate cookies at our own wish and gain useful information.
+
+
+
 
 
 
