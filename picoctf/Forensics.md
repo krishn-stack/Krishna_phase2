@@ -1,3 +1,74 @@
+# Challenge 1: Trivial Flag Transfer Protocol
+In the challenge, it is necesaary to find how the flag has been hidden.
+
+## Flag:
+```
+picoCTF{h1dd3n_1n_pLa1n_51GHT_18375919}
+```
+
+## My Approach:
+I was given with a capture file, so using ```Wire Shark``` I look for the meaningful files hidden in it and then exported them in the form of readable files into my machine. Files were named as:
+
+```
+1. instructions.txt
+2. plan
+3. program.deb
+4. picture1.bmp
+5. picture2.bmp
+6. picture3.bmp
+```
+
+First two files had some gibberish text written in it so to decipher it I used ROT13 decoder and found there were some messages in it. First file contained  ```TFTP DOESNT ENCRYPT OUR TRAFFIC SO WE MUST DISGUISE OUR FLAGTRANSFER. FIGURE OUT A WAY TO HIDE THE FLAG AND I WILL CHECK BACK FOR THE PLAN``` and the second one contained ```I USED THE PROGRAM AND HID IT WITH-DUE DILIGENCE. CHECK OUT THE PHOTOS```. As the message says check out the photos, theyw were all bmp photos so I decided to check by manipulating their sizes, maybe I get the flag but it didn't worked. Then I thought there might be some link to this third file```program.deb```. So I read about it on google and found it's a debian file and it needs to be run at linux or any similar terminal. So, I used UBUNTU Terminal.
+```
+Microsoft Windows [Version 10.0.26200.6901]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Krishna>wsl
+krishna@ULTRON:/mnt/c/Users/Krishna$ sudo apt-get install ./program.deb
+[sudo] password for krishna:
+Reading package lists... Done
+E: Unsupported file ./program.deb given on commandline
+krishna@ULTRON:/mnt/c/Users/Krishna$ cd Downloads
+krishna@ULTRON:/mnt/c/Users/Krishna/Downloads$ sudo apt-get install ./program.deb
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Note, selecting 'steghide' instead of './program.deb'
+Some packages could not be installed. This may mean that you have
+requested an impossible situation or if you are using the unstable
+distribution that some required packages have not yet been created
+or been moved out of Incoming.
+The following information may help to resolve the situation:
+
+The following packages have unmet dependencies:
+ steghide : Depends: libjpeg62-turbo (>= 1:1.3.1) but it is not installable
+E: Unable to correct problems, you have held broken packages.
+krishna@ULTRON:/mnt/c/Users/Krishna/Downloads$ sudo apt install steghide
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+steghide is already the newest version (0.5.1-15).
+0 upgraded, 0 newly installed, 0 to remove and 55 not upgraded.
+krishna@ULTRON:/mnt/c/Users/Krishna/Downloads$ steghide extract -sf ./picture1.bmp
+Enter passphrase:
+steghide: could not open the file "./picture1.bmp".
+krishna@ULTRON:/mnt/c/Users/Krishna/Downloads$ steghide extract -sf ./picture1.bmp -p "DUEDILIGENCE"
+steghide: could not open the file "./picture1.bmp".
+krishna@ULTRON:/mnt/c/Users/Krishna/Downloads$ steghide extract -sf ./picture3.bmp -p "DUEDILIGENCE"
+wrote extracted data to "flag.txt".
+krishna@ULTRON:/mnt/c/Users/Krishna/Downloads$ cat ./flag.txt
+picoCTF{h1dd3n_1n_pLa1n_51GHT_18375919}
+krishna@ULTRON:/mnt/c/Users/Krishna/Downloads$
+```
+
+## My learnings:
+Got to know about accessing and deciphering from capture files, then came to know about debiian files, how to extract data using stegnography using steghide.
+
+## Wrong Tangets:
+At start, I was not getting how to access .deb files on terminal, I was trying to access it in terminal but nothing worked then got to know about some sudo commands on google and then get the flag.
+
+
+
 # Challenge 2: tunn3l v1s10n
 In this challenge, a file is given and we have to recover the flag from it.
 
