@@ -131,7 +131,9 @@ krishna@ULTRON:/mnt/c/Users/Krishna$
 
 It wasn't working, so I took a look over C source file which was checking for the equality between ```code``` and ```GOAL```. I also noticed again and again there's a single error message showing irrespective of the input which was ```0xdeadbeef``` whose error length is 8. Then I decided to disassemble this C source file and got this graph assembly:
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/9a888536-8d7a-4f66-a14c-dffde03045c1" />
+
 In this I saw that code is in the ```rdi``` register so I checked it using ```edit function```/```Alt+P``` and got this:
+
 <img width="678" height="440" alt="image" src="https://github.com/user-attachments/assets/b4789fa2-33bf-4050-8698-3b8bcd0bb3dc" />
 
 So, I got confirmed that input should be of ```2<sup>8</sup>``` bytes. Then I inputed till I get a repetition sequence of period 8.
