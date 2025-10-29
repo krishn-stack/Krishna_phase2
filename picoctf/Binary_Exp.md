@@ -136,7 +136,7 @@ In this I saw that code is in the ```rdi``` register so I checked it using ```ed
 
 <img width="678" height="440" alt="image" src="https://github.com/user-attachments/assets/b4789fa2-33bf-4050-8698-3b8bcd0bb3dc" />
 
-So, I got confirmed that input should be of ```2<sup>8</sup>``` bytes. Then I inputed till I get a repetition sequence of period 8.
+So, I got confirmed that input should be of 2<sup>8</sup> bytes. Then I inputed till I get a repetition sequence of period 8.
 
 ```krishna@ULTRON:/mnt/c/Users/Krishna$ nc mars.picoctf.net 31890
  ______________________________________________________________________
