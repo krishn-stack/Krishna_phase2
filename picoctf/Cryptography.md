@@ -1,4 +1,4 @@
-# Challenge 3: rsa_oracle
+# Challenge 1: rsa_oracle
 The challenge is provided with a secret.enc file (ciphertext file) and an encrypted password.enc file, challenge asks us to deccrypt the password.enc file and get  the flag.
 
 ## Flag:
@@ -134,7 +134,7 @@ As the challenge says to get the sense of the encryption code given, I look over
 Got to know about chosen plain-text attack in cryptography and tried to build a decryption model for the given encryption model (ofcourse I didn't make it on my own, I had to take help from chatgpt).
 
 
-## Challenge 3: miniRSA
+# Challenge 3: miniRSA
 The challenge is given by a ciphertext file which needs to be deecrypted using information in that file.
 
 ```
