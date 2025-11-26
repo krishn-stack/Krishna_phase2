@@ -18,7 +18,8 @@ StegSeek 0.6 - https://github.com/RickdeJager/StegSeek
 [i] Extracting to "sakamoto.jpg.out".
 
 krishna@ULTRON:/mnt/c/Users/Krishna/Downloads$ cat flag.txt
-���6�>��:=����␦1�0���=������<␦�2���09����7�4���3������2�6���65����=�8��K9������8�:��m<1����3�<��������>�>��12=����␦9�0���5������4�2���89����?4���;������:�6���>␦5����5�8��[1�����0�:��}41����;�<��������6�>��Q:=����␦1�0���=������<␦�2�krishna@ULTRON:/mnt/c/Users/Krishna/Downloads$ steghide extract -sf sakamoto.jpg
+���6�>��:=����␦1�0���=������<␦�2���09����7�4���3������2�6���65����=�8��K9������8�:��m<1����3�<��������>�>��12=����␦9�0���5������4�2���89����?4���;������:�6���>␦5����5�8��[1�����0�:��}41����;�<��������6�>��Q:=����␦1�0���=������<␦�2�
+krishna@ULTRON:/mnt/c/Users/Krishna/Downloads$ steghide extract -sf sakamoto.jpg
 Enter passphrase:
 the file "flag.txt" does already exist. overwrite ? (y/n) y
 wrote extracted data to "flag.txt".
