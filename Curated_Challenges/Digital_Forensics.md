@@ -31,3 +31,38 @@ nite{h1d3_4nd_s33k_but_w1th_st3g_sdfu9s8}
 - Learned to use stegseek
 - Got to know about wordlist ```rockyou.txt```.
 
+
+
+
+# 2.  Nutrela Chunks:
+One of my favorite foods is soya chunks. But as I was enjoying some Nutrela today, I noticed a few chunks weren’t quite right. Seems like something’s off with their structure. Could you help me fix these broken chunks so I can enjoy my meal again?
+
+## FLag:
+```
+nite{n0w_y0u_kn0w_ab0ut_PNG_chunk5}
+```
+
+## Approach:
+- Opened corrupted PNG File in the HxD.
+- Checked for correct PNG hexdump, hexdump for the given PNG file was wrong.
+- Corrected it by editing ```png to PNG``` , ```ihdr to IHDR``` , ```idat to IDAT``` , ```iend to IEND``` by replacing with correct hexdump.
+- Got the flag.
+
+ <img width="1000" height="1000" alt="nutrela (2)" src="https://github.com/user-attachments/assets/7c503dca-ec61-4580-b8dd-8472a06f043e" />
+
+## Concepts Learned:
+- Got to know about hexdump of png file.
+- learned how to correct it.
+
+
+
+
+
+
+
+
+
+
+
+
+
