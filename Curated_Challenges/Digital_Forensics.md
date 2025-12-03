@@ -55,6 +55,27 @@ nite{n0w_y0u_kn0w_ab0ut_PNG_chunk5}
 - learned how to correct it.
 
 
+# 3. RAR of the Abyss:
+Two philosophers peer into the networked abyss and swap a secret. Use the secret to decrypt the Abyss’ RAwR and pull your flag from the void.
+
+## Flag:
+```
+nite{thus_sp0k3_th3_n3tw0rk_f0r3ns1cs_4n4lyst}
+```
+
+## Approach:
+- Opened ```abyss.pcap``` file in wireshark.
+- Analyzed the file and got the secret password exchanged between 2 philosophers - ```b3y0ndG00dand3vil```.
+- Got a TCP packet having some RAR ASCII text.
+- Followed that TCP stream and converted the format from ```ASCII``` to ```Raw```.
+- Saved as a zipped file.
+- Unzipped the zipped file using password- ```b3y0ndG00dand3vil``` using ```WINRAR``` application tool and got the flag.
+
+## Concepts Learned:
+- Learned how to analyse ```.pcap``` files using ```WIRESHARK``` tool.
+  
+
+
 
 
 
