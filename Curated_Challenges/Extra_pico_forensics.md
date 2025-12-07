@@ -80,7 +80,7 @@ picoCTF{15_y0ur_que57_qu1x071c_0r_h3r01c_b5e03bc5}
 
 ## Approach:
 - Since the challenge asks for MSB, so I thought it must be asking for image's most significant bits(MSBs) of the RGB values which are the main cause of any images's resolution.
-- Went to https://stegonline site and uploaded the ``` .png ``` file and then clixked on extract data.
+- Went to [https://stegonline](https://georgeom.net/StegOnline/upload) site and uploaded the ``` .png ``` file and then clixked on extract data.
 - Selected the MSBs of RGB values of the image.
 - Got an extract bunch of .txt document in which I searched for the flag.
 
