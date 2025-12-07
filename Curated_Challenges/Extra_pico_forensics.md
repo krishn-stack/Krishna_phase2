@@ -30,4 +30,4 @@ picoCTF{Ev3nt_vi3wv3r_1s_a_pr3tty_us3ful_t00l_81ba3fe9}
 
   ## Concepts Learned:
   - Learned about how to view and analyze logs.
-  - Event viwer
+  - Event viewer.
