@@ -31,3 +31,21 @@ picoCTF{Ev3nt_vi3wv3r_1s_a_pr3tty_us3ful_t00l_81ba3fe9}
   ## Concepts Learned:
   - Learned about how to view and analyze logs.
   - Event viewer.
+ 
+
+# PcapPoisoning:
+  > How about some hide and seek heh?
+Download this file and find the flag.
+
+## Flag:
+```
+picoCTF{P64P_4N4L7S1S_SU55355FUL_f621fa37}
+```
+
+## Approach:
+- Opened  ``` trace.pcap ``` file on wireshark.
+- Analysed the protocol packets and got the flag.
+
+  <img width="1333" height="996" alt="Screenshot 2025-12-07 170435" src="https://github.com/user-attachments/assets/aab9d263-96c6-44e0-8026-dbffabe7ca61" />
+
+
