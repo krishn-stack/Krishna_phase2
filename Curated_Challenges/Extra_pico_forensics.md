@@ -49,3 +49,23 @@ picoCTF{P64P_4N4L7S1S_SU55355FUL_f621fa37}
   <img width="1333" height="996" alt="Screenshot 2025-12-07 170435" src="https://github.com/user-attachments/assets/aab9d263-96c6-44e0-8026-dbffabe7ca61" />
 
 
+# Mob psycho:
+  > Can you handle APKs?
+Download the android apk here.
+
+## Flag:
+```
+picoCTF{ax8mC0RU6ve_NX85l4ax8mCl_5e67ea5e}
+```
+
+## Approach:
+- We were given with a ``` .apk ``` file.
+- Took the hint and got to know that it needs to be unzipped.
+- Searched how to unzip an .apk file, got to know by changing its extension from ``` .apk ``` to  ``` .zip ```.
+- It can now be unzipped.
+- Used Winrar to unzip it, got variouss folders inside that.
+- Searched for ``` flag.txt ```, it has a huge hex format text  ``` 7069636f4354467b6178386d433052553676655f4e5838356c346178386d436c5f35653637656135657d ```.
+- Went to https://cyberchef.org and decoded it and got the flag.
+
+  ## Concepts Learned:
+  - How to handle .apk files by unzipping it.
