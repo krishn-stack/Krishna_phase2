@@ -51,7 +51,6 @@ picoCTF{P64P_4N4L7S1S_SU55355FUL_f621fa37}
 
 # Mob psycho:
   > Can you handle APKs?
-Download the android apk here.
 
 ## Flag:
 ```
@@ -69,3 +68,23 @@ picoCTF{ax8mC0RU6ve_NX85l4ax8mCl_5e67ea5e}
 
   ## Concepts Learned:
   - How to handle .apk files by unzipping it.
+ 
+
+# MSB:
+  > This image passes LSB statistical analysis, but we can't help but think there must be something to the visual artifacts present in this image...
+
+## Flag:
+```
+picoCTF{15_y0ur_que57_qu1x071c_0r_h3r01c_b5e03bc5}
+```
+
+## Approach:
+- Since the challenge asks for MSB, so I thought it must be asking for image's most significant bits(MSBs) of the RGB values which are the main cause of any images's resolution.
+- Went to https://stegonline site and uploaded the ``` .png ``` file and then clixked on extract data.
+- Selected the MSBs of RGB values of the image.
+- Got an extract bunch of .txt document in which I searched for the flag.
+
+## Concepts Learned:
+- Learned about the RGB values of the image.
+- How they can be used to extract hidden data.
+
