@@ -110,4 +110,21 @@ picoCTF{cert!f1Ed_iNd!4n_s0rrY_3nDian_76e05f49}
 - Learned how to manipulate them using hexdump command.
 
 
+# DISKO 2:
+   > Can you find the flag in this disk image? The right one is Linux! One wrong step and its all gone!
+
+## Flag;
+```
+picoCTF{4_P4Rt_1t_i5_a93c3ba0}
+```
+
+## Approach:
+- Downloaded the file, got a zipped file.
+- Extracted it using WINRAR appplication.
+- Opened it HxD and using its ``` Find ``` utility seared for ``` picoCTF ```.
+- At first, I searched from forward direction, i got a wrong one.
+- Then I thought of searching from the backward direction, did that and got the flag from hexdump.
+
+
+
 
