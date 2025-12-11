@@ -88,3 +88,26 @@ picoCTF{15_y0ur_que57_qu1x071c_0r_h3r01c_b5e03bc5}
 - Learned about the RGB values of the image.
 - How they can be used to extract hidden data.
 
+
+# endianness-v2:
+  > Here's a file that was recovered from a 32-bits system that organized the bytes a weird way. We're not even sure what type of file it is.
+
+## Flag:
+```
+picoCTF{cert!f1Ed_iNd!4n_s0rrY_3nDian_76e05f49}
+```
+
+## Approach:
+- The challenge given says that file is recovered from a 32-bit system and bytes are unorganised.
+- So, firstly I searched for the file format as I knew that it is related to hexdump of the file.
+- Using ``` exiftool ```, I got to know that it is a ``` JPEG ``` file and since it is from 32 bit system, it means that every 4 bytes has to be reversed and hence needed to be modified.
+- I searched for a command if there any exists which can manipulate the whole hexdump at once and I don't need to do all of it manually and I got one.
+- I used ``` hexdump -v -e '1/4 "%08x"' -e '"\n"' challengefile | xxd -r -p > output_file ``` command to reverse the complete hexdump and store it in a ``` output_file ```.
+- Opened ``` output_file ``` using ``` GIMP ``` and got the flag.
+
+## Concepts Learned:
+- Got to know about the ``` little endian ``` and ``` big endian ``` format.
+- Learned how to manipulate them using hexdump command.
+
+
+
