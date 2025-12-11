@@ -113,7 +113,7 @@ picoCTF{cert!f1Ed_iNd!4n_s0rrY_3nDian_76e05f49}
 # DISKO 2:
    > Can you find the flag in this disk image? The right one is Linux! One wrong step and its all gone!
 
-## Flag;
+## Flag:
 ```
 picoCTF{4_P4Rt_1t_i5_a93c3ba0}
 ```
