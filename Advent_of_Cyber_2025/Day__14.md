@@ -57,9 +57,9 @@ Containerisation solves these problems by packing applications, along with their
   THM{DOCKER_ESCAPE_SUCCESS}
   ```
 -  There is a secret code contained within the news site running on port 5002; this code also happens to be the password for the deployer user! They should definitely change their password. Can you find it?
-  ```
-  DeployMaster2025!
-  ```
+     ```
+      DeployMaster2025!
+     ```
 
 
 
