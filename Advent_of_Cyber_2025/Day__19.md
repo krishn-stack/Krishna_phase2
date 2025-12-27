@@ -131,7 +131,7 @@ Coils and Holding Registers are writable—you can change their values to contro
 - Opened ```nano``` text editor and wrote ``` reconnaissance.py ``` as given and ran the script.
 - Again opened nano and wrote ``` restore_christmas.py ``` and ran the script and got the flag.
 
-  ## Answers:
+  ## Flag:
   ```
   THM{eGgMas0V3r}
   ```
