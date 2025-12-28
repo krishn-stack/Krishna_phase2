@@ -159,39 +159,94 @@ You can log in to your own account using the following credentials: ``` wiener:p
   - https://insecure-website.com/login/home.jsp?role=1
 
 
+# Horizontal privilege escalation
+ > Horizontal privilege escalation occurs if a user is able to gain access to resources belonging to another user, instead of their own resources of that type.
 
+Horizontal privilege escalation attacks may use similar types of exploit methods to vertical privilege escalation. For example, a user might access their own account page using the following URL:
+```
+https://insecure-website.com/myaccount?id=123
+```
+By editing the ``` id ``` parameter, attacker can access resources of any user.<br>
+***This is an example of IDOR vulnerability ``` (Insecure Direct Object Reference) ```***.<br>
+Instead of numbers as id, id parameter can also hold any globally-unique identifiers (GUIDs) making it difficult for an attacker to access resources of different users.
+
+## Lab-4: User ID controlled by request parameter, with unpredictable user IDs
+ > This lab has a horizontal privilege escalation vulnerability on the user account page, but identifies users with GUIDs.<br>
+To solve the lab, find the GUID for ``` carlos ```, then submit his API key as the solution.<br>
+You can log in to your own account using the following credentials: ``` wiener:peter ```.
+
+## Solution:
+- Accessed the lab, and got this blog dashboard.
+
+    <img width="1917" height="1197" alt="image" src="https://github.com/user-attachments/assets/459c0223-a6b8-421f-a1bc-31e0925753b1" />
+
+- Logged into the account using given credentials and got this web page.
+
+    <img width="1918" height="1137" alt="image" src="https://github.com/user-attachments/assets/7222f22f-84dd-4c2d-aae2-fca76652b781" />
+
+- Got this ``` id -> 22f2375d-51e0-4932-bd5e-5fed2172ba2d ``` for user ``` wiener ``` but we want for ``` carlos ``` to get his API key.
+- Went back to Home to check if I get any blog writen by carlos and got one.
+- Opened it but still got ``` postId ``` instead of userId.
+
+   <img width="1919" height="1193" alt="Screenshot 2025-12-28 190429" src="https://github.com/user-attachments/assets/ef147c3b-8fe5-4ed4-b3f2-f4822e2804a0" />
+
+- Clicked on carlos in the above image and got the userId in the URL.
+
+   <img width="1919" height="1199" alt="Screenshot 2025-12-28 190402" src="https://github.com/user-attachments/assets/955bf8d0-0a01-4515-8734-c29a88974645" />
+
+- Went back to ``` My Account ``` and changed wiener's id with carlos' id and got his API key.
+
+   <img width="1919" height="1199" alt="Screenshot 2025-12-28 190341" src="https://github.com/user-attachments/assets/a08ba6f6-5149-4854-9d1a-fb7df710aaf9" />
+
+- Submitted it and completed Lab-4.
+
+   <img width="1917" height="1198" alt="Screenshot 2025-12-28 191413" src="https://github.com/user-attachments/assets/669414bc-873a-490f-b920-d1960200e4ac" />
+
+## Concepts Learned from Lab-4
+- Got to know about IDOR and how to access other users information my id modification.
+
+# Horizontal to vertical privilege escalation
+ > A Horizontal Priviledge Escalation might allow an attacker to reset or capture the password belonging to another user. If the attacker targets an administrative user and compromises their account, then they can gain administrative access and so perform Vertical Privilege Escalation.
+
+An attacker might be able to gain access to another user's account page using the parameter tampering technique already described for horizontal privilege escalation:
+```
+https://insecure-website.com/myaccount?id=456
+```
+If the targeted user is administrator then attacker can get access to sensitive functionality which he shouldn't get.
+
+## Lab-5: User ID controlled by request parameter with password disclosure
+> This lab has user account page that contains the current user's existing password, prefilled in a masked input.<br>
+To solve the lab, retrieve the administrator's password, then use it to delete the user ``` carlos ```.<br>
+You can log in to your own account using the following credentials: ``` wiener:peter ```.
+
+## Solution:
+- Accessed the lab and got as usual dashboard.
+- Opened Login page and logged in using given credentials and got this.
+
+   <img width="1897" height="1088" alt="image" src="https://github.com/user-attachments/assets/e81b5097-8170-4b8f-abf2-331cc8794f87" />
+
+- Changed the id in the URL from :
+  - ``` wiener ``` -> ``` admin ```  (didn't work)
+  - ``` wiener ``` -> ``` administrative-panel ```  (didn't work)
+  - ``` wiener ``` -> ``` administrator ```  (worked)
+  and got this.
+
+   <img width="1918" height="1199" alt="Screenshot 2025-12-28 191521" src="https://github.com/user-attachments/assets/66ccc713-e21b-46dd-b4cb-b1d0b841d4d1" />
+
+- Now I need to get the password unmasked so that I could login as administrator.
+- Tried to copy the masked password and tried to login but didn't work as password was not getting copied in the first place.
+- Opened Burp and saw the ```/administrator ``` request and in response got the password value unmasked.
+
+   <img width="1919" height="1199" alt="Screenshot 2025-12-28 191456" src="https://github.com/user-attachments/assets/fc36d48a-80fb-4e37-9ca2-80c7e58078c0" />
+
+- Logged in as administrator using password, went to Admin Panel.
+- Deleted ``` carlos ``` from users and completed the lab.
+
+   <img width="1918" height="1199" alt="Screenshot 2025-12-28 191521" src="https://github.com/user-attachments/assets/5b3129b1-a995-4df2-a199-1bc574253296" />
+
+## Concepts Learnerd from Lab-5
+- How to use Horizontal and vertical priviledge escalation together.
     
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
 
 
    
