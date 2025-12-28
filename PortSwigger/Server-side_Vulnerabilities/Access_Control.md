@@ -228,8 +228,8 @@ You can log in to your own account using the following credentials: ``` wiener:p
 - Changed the id in the URL from :
   - ``` wiener ``` -> ``` admin ```  (didn't work)
   - ``` wiener ``` -> ``` administrative-panel ```  (didn't work)
-  - ``` wiener ``` -> ``` administrator ```  (worked)
-  and got this.
+  - ``` wiener ``` -> ``` administrator ```  (worked)<br>
+and got this.
 
    <img width="1918" height="1199" alt="Screenshot 2025-12-28 191521" src="https://github.com/user-attachments/assets/66ccc713-e21b-46dd-b4cb-b1d0b841d4d1" />
 
