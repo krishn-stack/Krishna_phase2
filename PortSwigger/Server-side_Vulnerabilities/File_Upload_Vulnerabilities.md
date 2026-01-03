@@ -103,9 +103,49 @@ POST /images HTTP/1.1
     wiener
     ---------------------------012345678901234567890123456--
 ```
+One way that websites may attempt to validate file uploads is to check that this input-specific ``` Content-Type ``` header matches an expected MIME type.<br>
+If the server is only expecting image files, for example, it may only allow types like ``` image/jpeg ``` and ``` image/png ```.
+
+# Lab-2: Web shell upload via Content-Type restriction bypass
+> This lab contains a vulnerable image upload function. It attempts to prevent users from uploading unexpected file types, but relies on checking user-controllable input to verify this.
+To solve the lab, upload a basic PHP web shell and use it to exfiltrate the contents of the file ``` /home/carlos/secret ```. Submit this secret using the button provided in the lab banner.
+You can log in to your own account using the following credentials: ``` wiener:peter ```
+
+## Solution:
+- Accessed the lab and got usual dashboard.
+
+   <img width="1903" height="1090" alt="Screenshot 2026-01-03 113144" src="https://github.com/user-attachments/assets/5023a382-3f3b-4ec9-938b-688599fbe386" />
+
+- Went to ``` My Account ``` and logged in.
+- Uploaded a random text file, it says that only ``` image/jpeg ``` or ``` image/png ``` allowed.
+- Then uploaded a random screenshot and got a preview of that image like in the previous lab.
+- Opened Burp and got 2 same type of requests, one POST and one GET request for uploading the screenshot.
+- Changed the ``` filename ``` -> ``` exploit.php ``` and deleted the image data and wrote a ``` php webshell ``` to extract the contents from the given path.
+  ```
+  <?php echo file_get_contents('/home/carlos/secret'); ?>
+  ```
+- Sent the request but response was of not much use.
+
+   <img width="1919" height="1199" alt="Screenshot 2025-12-31 161516" src="https://github.com/user-attachments/assets/58b4fef5-5f46-4735-91ca-8e5aa29cb187" />
+
+- Then I tried to change the ``` Content-Type ``` header to ``` image/png ``` as lab says it has image upload vulnerability and it allows only jpeg/png to be uploaded.
+
+  <img width="1919" height="1199" alt="Screenshot 2025-12-31 161537" src="https://github.com/user-attachments/assets/fca93a58-abab-41b8-a2f1-918ad0936cac" />
+
+- Sent the request to the server and got the contents.
+
+   <img width="1919" height="1199" alt="Screenshot 2025-12-31 161442" src="https://github.com/user-attachments/assets/8f67adcd-4ca4-47be-9d42-1379da36d00c" />
+
+- Submitted the content and completed the lab.
+
+## Concepts Learned:
+- How to deal with image upload vulnerabilities.
+- Manipulating server to believe that the uploaded thing is what it wants but it isn't, by changing the ``` Content-Type ``` header.
+  
 
 
 
+   
 
 
 
