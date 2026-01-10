@@ -47,10 +47,10 @@
   > /home/socmas/2025/eggstrike.sh
 - RUN ``` cd /home/socmas/2025 ```
 - RUN ``` cat eggstrike.sh ```
-  > Eggstrike v0.3
-  > © 2025, Sir Carrotbane, HopSec
-  > cat wishlist.txt | sort | uniq > /tmp/dump.txt
-  > rm wishlist.txt && echo "Chistmas is fading..."
+  > Eggstrike v0.3<br>
+  > © 2025, Sir Carrotbane, HopSec<br
+  > cat wishlist.txt | sort | uniq > /tmp/dump.txt<br>
+  > rm wishlist.txt && echo "Chistmas is fading..."<br>
   > mv eastmas.txt wishlist.txt && echo "EASTMAS is invading!"
 
 ## Sir Carrotbane Attacks:
